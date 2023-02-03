@@ -3,21 +3,34 @@
   <component name="CompilerConfiguration">
     <option name="BUILD_PROCESS_HEAP_SIZE" value="4500" />
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="yasuo-common-log" />
+        <module name="yasuo-gateway" />
+        <module name="yasuo-common-mybatis" />
+        <module name="yasuo-common-core" />
         <module name="yasuo-auth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="yasuo-auth" target="1.5" />
-      <module name="yasuo-cloud" target="1.5" />
-      <module name="yasuo-gateway" target="1.5" />
+      <module name="test" target="1.8" />
+      <module name="yasuo-auth" target="1.8" />
+      <module name="yasuo-auth (1)" target="1.5" />
+      <module name="yasuo-cloud" target="1.8" />
+      <module name="yasuo-common" target="1.8" />
+      <module name="yasuo-common-core" target="1.8" />
+      <module name="yasuo-common-log" target="1.8" />
+      <module name="yasuo-common-log (1)" target="1.5" />
+      <module name="yasuo-common-mybatis" target="1.8" />
+      <module name="yasuo-gateway" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="test" options="-parameters" />
       <module name="yasuo-auth" options="" />
       <module name="yasuo-cloud" options="-parameters" />
       <module name="yasuo-gateway" options="" />

@@ -1,0 +1,63 @@
+server:
+  port: 12000
+  error:
+    #异常类型
+    include-exception: false
+    #异常信息
+    include-message: always
+    #异常堆栈
+    include-stacktrace: never
+spring:
+  application:
+    name: yasuo-gateway
+  profiles:
+    active: @profile.name@
+  cloud:
+    nacos:
+      discovery:
+        #服务注册地址
+        server-addr: @config.server-addr@
+        group: ${spring.application.name}
+        enabled: true
+        namespace: @yasuo@
+      config:
+        # 配置中心地址
+        server-addr: @config.server-addr@
+        #namespace: @config.server.namespace@
+        group: ${spring.application.name}
+        file-extension: yml
+        #共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+    gateway:
+      discovery:
+        locator:
+          #动态路由
+          enabled: false
+      routes:
+        - id: gateway-bonus
+          uri: http://127.0.0.1:8082/
+          predicates:
+            - Path=/saas-biz-bonus/**
+            - Weight=auth1,8
+          filters:
+            - Token=false
+      globalcors: #跨域配置
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allow-credentials: true
+            allowed-headers: "*"
+            allowedMethods: #请求方式
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - PATCH
+              - OPTIONS
+              - HEAD
+              - CONNECT
+              - TRACE
+
+logging:
+  config: classpath:logback-spring.xml

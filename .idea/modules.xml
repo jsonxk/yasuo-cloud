@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/yasuo-auth/yasuo-auth.iml" filepath="$PROJECT_DIR$/yasuo-auth/yasuo-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/yasuo-cloud.iml" filepath="$PROJECT_DIR$/yasuo-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common-core/yasuo-common-core.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common-core/yasuo-common-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common-log/yasuo-common-log.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common-log/yasuo-common-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common-mybatis/yasuo-common-mybatis.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common-mybatis/yasuo-common-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yasuo-gateway/yasuo-gateway.iml" filepath="$PROJECT_DIR$/yasuo-gateway/yasuo-gateway.iml" />
     </modules>
   </component>
 </project>

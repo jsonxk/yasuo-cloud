@@ -19,7 +19,15 @@
     </properties>
     <modules>
         <module>yasuo-auth</module>
+        <module>yasuo-gateway</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+        </dependency>
+    </dependencies>
     <dependencyManagement>
         <dependencies>
             <!--springboot start-->
@@ -77,7 +85,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency> <!-- 本示例，我们使用 MySQL -->
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.48</version>
@@ -100,11 +108,35 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- Gateway网关依赖,内置webflux-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>2.0.14</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <profiles>
         <profile>
             <id>dev</id>
+            <activation>
+                <!--默认激活配置-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <finalName>yasuo-cloud</finalName>
                 <plugins>
@@ -130,6 +162,14 @@
                     </resource>
                 </resources>
             </build>
+            <properties>
+                <!--当前环境-->
+                <profile.name>dev</profile.name>
+                <!--Nacos服务地址-->
+                <config.server-addr>49.234.47.203:8848</config.server-addr>
+                <!--Nacos服务地址namespace-->
+                <yasuo>yasuo</yasuo>
+            </properties>
         </profile>
     </profiles>
 
