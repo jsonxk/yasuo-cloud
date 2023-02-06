@@ -30,6 +30,7 @@ spring:
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
     gateway:
+      api-prefix: /api/v1
       discovery:
         locator:
           #动态路由
@@ -45,7 +46,7 @@ spring:
       globalcors: #跨域配置
         cors-configurations:
           '[/**]':
-            allowedOrigins: "*"
+            allowedOriginsPatterns: "*"
             allow-credentials: true
             allowed-headers: "*"
             allowedMethods: #请求方式
@@ -61,3 +62,4 @@ spring:
 
 logging:
   config: classpath:logback-spring.xml
+springfox.documentation.swagger-ui.base-url: ${spring.cloud.gateway.api-prefix}
