@@ -29,16 +29,13 @@ public class SwaggerHandler {
     private SwaggerResourcesProvider swaggerResources;
 
     @GetMapping("/configuration/ui")
-    public Mono<ResponseEntity<UiConfiguration>> uiConfiguration()
-    {
-        return Mono.just(new ResponseEntity<>(
-                Optional.ofNullable(uiConfiguration).orElse(UiConfigurationBuilder.builder().build()), HttpStatus.OK));
+    public Mono<ResponseEntity<UiConfiguration>> uiConfiguration() {
+        return Mono.just(new ResponseEntity<>(Optional.ofNullable(uiConfiguration).orElse(UiConfigurationBuilder.builder().build()), HttpStatus.OK));
     }
 
     @SuppressWarnings("rawtypes")
     @GetMapping("")
-    public Mono<ResponseEntity> swaggerResources()
-    {
+    public Mono<ResponseEntity> swaggerResources() {
         return Mono.just((new ResponseEntity<>(swaggerResources.get(), HttpStatus.OK)));
     }
 }

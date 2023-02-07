@@ -1,9 +1,9 @@
 package com.yasuo;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @Description:
@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  **/
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableSwagger2
+@EnableKnife4j
 public class YasuoGatewayApplication {
 
     public static void main(String[] args) {

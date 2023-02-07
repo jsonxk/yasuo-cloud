@@ -30,7 +30,6 @@ spring:
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
     gateway:
-      api-prefix: /api/v1
       discovery:
         locator:
           #动态路由
@@ -62,4 +61,3 @@ spring:
 
 logging:
   config: classpath:logback-spring.xml
-springfox.documentation.swagger-ui.base-url: ${spring.cloud.gateway.api-prefix}
