@@ -10,6 +10,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="yasuo-common-log" />
         <module name="yasuo-gateway" />
+        <module name="yasuo-common-swagger" />
         <module name="yasuo-common-mybatis" />
         <module name="yasuo-common-core" />
         <module name="yasuo-auth" />
@@ -25,6 +26,7 @@
       <module name="yasuo-common-log" target="1.8" />
       <module name="yasuo-common-log (1)" target="1.5" />
       <module name="yasuo-common-mybatis" target="1.8" />
+      <module name="yasuo-common-swagger" target="1.8" />
       <module name="yasuo-gateway" target="1.8" />
     </bytecodeTargetLevel>
   </component>

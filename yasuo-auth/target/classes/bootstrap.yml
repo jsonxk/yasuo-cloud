@@ -1,0 +1,25 @@
+server:
+  port: 12001
+spring:
+  application:
+    name: yasuo-auth
+  profiles:
+    active: dev
+
+  cloud:
+    nacos:
+      discovery:
+        #服务注册地址
+        server-addr: 49.234.47.203:8848
+        group: ${spring.application.name}
+        enabled: true
+        namespace: yasuo
+      config:
+        # 配置中心地址
+        server-addr: 49.234.47.203:8848
+        namespace: yasuo
+        group: ${spring.application.name}
+        file-extension: yml
+        #共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}

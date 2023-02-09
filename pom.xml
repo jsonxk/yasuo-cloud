@@ -30,6 +30,13 @@
             <artifactId>lombok</artifactId>
             <version>1.18.20</version>
         </dependency>
+
+        <!--springCloud 2020.* 版本把bootstrap禁用，需要重新引入-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>3.1.4</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>

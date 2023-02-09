@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common-core/yasuo-common-core.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common-core/yasuo-common-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common-log/yasuo-common-log.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common-log/yasuo-common-log.iml" />
       <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common-mybatis/yasuo-common-mybatis.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common-mybatis/yasuo-common-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yasuo-common/yasuo-common-swagger/yasuo-common-swagger.iml" filepath="$PROJECT_DIR$/yasuo-common/yasuo-common-swagger/yasuo-common-swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/yasuo-gateway/yasuo-gateway.iml" filepath="$PROJECT_DIR$/yasuo-gateway/yasuo-gateway.iml" />
     </modules>
   </component>

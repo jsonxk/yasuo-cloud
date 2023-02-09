@@ -4,21 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>yasuo-common</artifactId>
+    <artifactId>yasuo-common-swagger</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>yasuo-common</name>
-    <packaging>pom</packaging>
+    <name>yasuo-common-swagger</name>
+
     <parent>
         <groupId>com.yasuo</groupId>
-        <artifactId>yasuo-cloud</artifactId>
+        <artifactId>yasuo-common</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <modules>
-        <module>yasuo-common-log</module>
-        <module>yasuo-common-core</module>
-        <module>yasuo-common-mybatis</module>
-        <module>yasuo-common-swagger</module>
-    </modules>
     <dependencies>
 
     </dependencies>

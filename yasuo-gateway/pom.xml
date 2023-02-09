@@ -34,12 +34,6 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
-        <!--springCloud 2020.* 版本把bootstrap禁用，需要重新引入-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-
         <!--Swagger 加强UI Knife4j-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>

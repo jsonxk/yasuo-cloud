@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/yasuo-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/yasuo-common/yasuo-common-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/yasuo-common/yasuo-common-core/pom.xml" />
+        <option value="$PROJECT_DIR$/yasuo-common/yasuo-common-swagger/pom.xml" />
       </list>
     </option>
   </component>
