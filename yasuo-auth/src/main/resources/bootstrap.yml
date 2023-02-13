@@ -1,10 +1,15 @@
 server:
   port: 12001
+  servlet:
+    context-path: /yasuo-auth
 spring:
   application:
     name: yasuo-auth
   profiles:
     active: @profile.name@
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
 
   cloud:
     nacos:
@@ -23,3 +28,9 @@ spring:
         #共享配置
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+swagger:
+  enable: true
+knife4j:
+  enable: true
+logging:
+  config: classpath:logback-spring.xml

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <contextName>yasuo-gateway</contextName>
+    <contextName>yasuo-auth</contextName>
 
     <!-- 控制台日志格式：彩色日志 -->
     <!-- magenta: 洋红 -->
@@ -44,7 +44,7 @@
         <appender-ref ref="CONSOLE"/>
     </logger>
     <logger name="org.springframework.web.client.RestTemplate" level="DEBUG"/>
-    <logger name="com.yasuo" level="DEBUG"/>
+    <logger name="com.yasuo.auth" level="DEBUG"/>
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
     </root>

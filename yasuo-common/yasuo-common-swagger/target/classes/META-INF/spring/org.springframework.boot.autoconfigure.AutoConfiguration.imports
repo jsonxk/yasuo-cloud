@@ -1,1 +1,2 @@
 com.yasuo.common.swagger.SwaggerBeanPostProcessor
+com.yasuo.common.swagger.SwaggerConfigure

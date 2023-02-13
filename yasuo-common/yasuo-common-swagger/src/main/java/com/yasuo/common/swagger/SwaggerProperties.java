@@ -22,7 +22,7 @@ public class SwaggerProperties {
     /**
      * 是否开启swagger
      */
-    private Boolean enabled;
+    private Boolean enable;
 
     /**
      * swagger会解析的包路径

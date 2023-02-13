@@ -1,8 +1,9 @@
 package com.yasuo.auth.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.yasuo.auth.entity.Test;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Description:
@@ -11,10 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/token")
+@Api(tags = "Token")
 public class TokenController {
 
     @GetMapping("/get")
-    public String get(String token){
-        return token;
+    @ApiOperation(value = "获取token")
+    @ResponseBody
+    public Test get(@RequestBody Test t) {
+        return t;
     }
+
+
 }

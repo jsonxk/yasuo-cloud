@@ -1,13 +1,14 @@
 package com.yasuo.common.swagger;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.util.CollectionUtils;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -22,11 +23,11 @@ import java.util.List;
  * @Author: xk
  * @Date: 2023/2/10 17:05
  **/
-@Configuration
-@EnableOpenApi
 @EnableKnife4j
-@EnableAutoConfiguration
-@ConditionalOnProperty(name = "swagger.enable", value = "true")
+@EnableOpenApi
+@AutoConfiguration
+@ConditionalOnProperty(name = "swagger.enable", havingValue = "true")
+@Import(value = SwaggerProperties.class)
 public class SwaggerConfigure {
 
     /**
@@ -46,9 +47,13 @@ public class SwaggerConfigure {
             swaggerProperties.setExcludePath(DEFAULT_EXCLUDE_PATH);
         }
 
-        ApiSelectorBuilder apiSelectorBuilder = new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo(swaggerProperties)).select();
-        swaggerProperties.getBasePath().forEach(item -> apiSelectorBuilder.paths(PathSelectors.ant(item)));
-        swaggerProperties.getExcludePath().forEach(item -> apiSelectorBuilder.paths(PathSelectors.ant(item).negate()));
+        ApiSelectorBuilder apiSelectorBuilder = new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo(swaggerProperties))
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.yasuo"))
+                .paths(PathSelectors.any());
+        //swaggerProperties.getBasePath().forEach(item -> apiSelectorBuilder.paths(PathSelectors.ant(item)));
+        //swaggerProperties.getExcludePath().forEach(item -> apiSelectorBuilder.paths(PathSelectors.ant(item).negate()));
         return apiSelectorBuilder.build();
     }
 

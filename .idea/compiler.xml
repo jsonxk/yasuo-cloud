@@ -9,11 +9,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="yasuo-common-log" />
+        <module name="yasuo-common-mybatis" />
+        <module name="yasuo-auth" />
         <module name="yasuo-gateway" />
         <module name="yasuo-common-swagger" />
-        <module name="yasuo-common-mybatis" />
         <module name="yasuo-common-core" />
-        <module name="yasuo-auth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -28,6 +28,7 @@
       <module name="yasuo-common-mybatis" target="1.8" />
       <module name="yasuo-common-swagger" target="1.8" />
       <module name="yasuo-gateway" target="1.8" />
+      <module name="yasuo-swagger" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -36,6 +37,7 @@
       <module name="yasuo-auth" options="" />
       <module name="yasuo-cloud" options="-parameters" />
       <module name="yasuo-gateway" options="" />
+      <module name="yasuo-swagger" options="-parameters" />
     </option>
   </component>
 </project>
