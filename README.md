@@ -14,3 +14,11 @@
     1.分组
     2.鉴权
     3.排查地址
+
+
+
+
+
+###杂记
+1.autoConfigure,spring.factories,org.springframework.boot.autoconfigure.AutoConfiguration.imports
+2.additional-spring-configuration-metadata.json
