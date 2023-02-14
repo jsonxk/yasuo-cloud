@@ -30,7 +30,5 @@ spring:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
 swagger:
   enable: true
-knife4j:
-  enable: true
 logging:
   config: classpath:logback-spring.xml

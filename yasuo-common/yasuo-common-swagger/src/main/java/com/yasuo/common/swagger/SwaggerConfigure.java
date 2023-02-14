@@ -26,8 +26,8 @@ import java.util.List;
 @EnableKnife4j
 @EnableOpenApi
 @AutoConfiguration
-@ConditionalOnProperty(name = "swagger.enable", havingValue = "true")
 @Import(value = SwaggerProperties.class)
+@ConditionalOnProperty(name = "swagger.enable", matchIfMissing = true, havingValue = "true")
 public class SwaggerConfigure {
 
     /**
@@ -47,14 +47,14 @@ public class SwaggerConfigure {
             swaggerProperties.setExcludePath(DEFAULT_EXCLUDE_PATH);
         }
 
-        ApiSelectorBuilder apiSelectorBuilder = new Docket(DocumentationType.SWAGGER_2)
+        ApiSelectorBuilder apiSelectorBuilder = new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo(swaggerProperties))
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.yasuo"))
                 .paths(PathSelectors.any());
         //swaggerProperties.getBasePath().forEach(item -> apiSelectorBuilder.paths(PathSelectors.ant(item)));
         //swaggerProperties.getExcludePath().forEach(item -> apiSelectorBuilder.paths(PathSelectors.ant(item).negate()));
-        return apiSelectorBuilder.build();
+        return apiSelectorBuilder.build().enable(swaggerProperties.getEnable());
     }
 
     private ApiInfo apiInfo(SwaggerProperties swaggerProperties) {
