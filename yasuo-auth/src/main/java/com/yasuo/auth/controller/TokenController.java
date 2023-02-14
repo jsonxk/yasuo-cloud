@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @Api(tags = "Token")
 public class TokenController {
 
-    @GetMapping("/get")
+    @PostMapping("/get")
     @ApiOperation(value = "获取token")
     @ResponseBody
     public Test get(@RequestBody Test t) {

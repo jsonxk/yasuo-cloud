@@ -45,6 +45,7 @@
     </logger>
     <logger name="org.springframework.web.client.RestTemplate" level="DEBUG"/>
     <logger name="com.yasuo.auth" level="DEBUG"/>
+    <logger name="org.springframework.web.servlet.DispatcherServlet" level="DEBUG"/>
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
     </root>

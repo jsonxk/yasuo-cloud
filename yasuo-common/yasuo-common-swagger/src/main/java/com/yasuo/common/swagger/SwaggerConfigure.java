@@ -2,7 +2,6 @@ package com.yasuo.common.swagger;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.util.CollectionUtils;
@@ -27,7 +26,6 @@ import java.util.List;
 @EnableOpenApi
 @AutoConfiguration
 @Import(value = SwaggerProperties.class)
-@ConditionalOnProperty(name = "swagger.enable", matchIfMissing = true, havingValue = "true")
 public class SwaggerConfigure {
 
     /**
